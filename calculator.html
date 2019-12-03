@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assessment 2</title>
+	<script type="text/javascript">
+		class BaseCal{
+
+			add(a,b){
+				let first=a;
+				let second=b;
+				return first+second;
+			}
+			static sub(a,b){
+				let first=a;
+				let second=b;
+				return first-second;
+			}
+
+			mul(a,b){
+				let first=a;
+				let second=b;
+				return first*second;
+			}
+			
+		}
+		let div=(x,y)=>{
+			return x/y;
+		}
+		class SciCal extends BaseCal{
+			sinCal(a){
+				return Math.sin(a);
+			}
+			conCal(a){
+				return Math.cos(a);
+			}
+		}
+		let sc=new SciCal();
+		console.log("Sin= "+sc.sinCal(10));
+		console.log("Cos= "+sc.conCal(10));
+		console.log("Addition= "+sc.add(10,20));
+		console.log("substraction= "+SciCal.sub(20,10));
+		console.log("multiplication= "+sc.mul(20,10));
+		console.log("division= "+div(20,10));
+
+	</script>
+</head>
+
+<body>
+
+</body>
+</html>ECHO is on.

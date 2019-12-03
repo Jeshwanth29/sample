@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS</title>
+
+	<script type="text/javascript">
+		//ES6 model
+		function test(){
+			console.log('my function');
+		}
+		test();
+		class Person{
+			constructor(name,age){
+				this.name=name;
+				this.age=age;
+				this._test=100;
+				console.log('name-->'+this.name);
+				console.log('age of the Person-->'+this.age);
+				
+
+			}
+
+			//define public method
+			getConCatValue(){
+				return this.ConCat();
+			}
+			ConCat(){
+				return this.name+" "+this.age;
+			}
+
+			testOverride(){
+				console.log('over-ridden parent function');
+			}
+
+			static test(){
+				console.log('to call a static function');
+			}
+
+
+			/*_Private(){
+				console.log('call of private properties-->  '+this._test);
+				return this._test;
+			}*/
+		}
+
+		Person.prototype.test=200;
+		Person.prototype.sayHello=function(){
+			//alert(this.test);
+			console.log("added new method");
+
+		};
+
+		class Student extends Person{
+			mymeth(){
+				console.log('makes a noise. child');
+			}
+			testOverride(){
+				super.testOverride();
+				console.log('over-ridden child function');
+			}
+		}
+
+
+
+
+
+
+		/*let p=new Person('Jesh',22);
+		//call the methods
+		console.log("call the person class method here-->"+p.getConCatValue());	
+		console.log("call private implimentation-->"+p._Private());
+		p.sayHello();*/
+
+		let S= new Student('Jesh',22);
+		console.log('call person   '+S.getConCatValue());
+		S.sayHello();
+		S.mymeth();
+		S.testOverride();
+		Person.test();
+
+
+
+
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>

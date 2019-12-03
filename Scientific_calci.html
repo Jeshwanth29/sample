@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<script type="text/javascript">
+		class Calculator{
+			constructor(a,b){
+				this.a=a;
+				this.b=b;
+			}
+			addition(){
+				let res=this.a+this.b;
+				console.log(res);
+			}
+			substraction(){
+				let res=this.b-this.a;
+				console.log(res);
+			}
+		}
+
+		let c1=new Calculator(3,4);
+		c1.addition();
+		c1.substraction();
+
+		Calculator.prototype.x=3;
+		Calculator.prototype.y=4;
+		Calculator.prototype.mul=function(){
+			var res=this.x*this.y;
+			console.log("product is:"+ res);
+		}
+		
+		Calculator.prototype.div=function(){
+			var res=this.x/this.y;
+			console.log("quotient is:"+ res);
+		}
+		c1.mul();
+		c1.div();
+		
+			//SIN AND COS
+		Calculator.prototype.x=3;
+		Calculator.prototype.y=4;
+		Calculator.prototype.sin=function(){
+			var res=Math.sin(this.x);
+			console.log("sin is:"+res);
+		}
+
+		Calculator.prototype.cos=function(){
+			var res=Math.cos(this.x);
+			console.log("cos is:"+res);
+		}
+		c1.sin();
+		c1.cos();
+
+		Calculator.prototype.squareroot=function(){
+			var res=Math.sqrt(this.y);
+			console.log("square root is:"+res);
+		}
+		c1.squareroot();
+	</script>
+</head>
+<body>
+
+</body>
+</html>
